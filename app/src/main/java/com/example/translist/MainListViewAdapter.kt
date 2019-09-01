@@ -17,8 +17,9 @@ class MainListViewAdapter(context: Context) : BaseAdapter() {
     ) : Serializable
 
     var items = listOf(
-        Item(title = "アイテム①", imageResId = R.drawable.photo_1),
-        Item(title = "アイテム②", imageResId = R.drawable.photo_2)
+        Item(title = "岳沢湿原", imageResId = R.drawable.photo_1),
+        Item(title = "明神橋", imageResId = R.drawable.photo_2),
+        Item(title = "大正池", imageResId = R.drawable.photo_3)
     )
 
     private val inflater by lazy {
@@ -31,7 +32,7 @@ class MainListViewAdapter(context: Context) : BaseAdapter() {
         val newConvertView = convertView ?: this.inflater.inflate(R.layout.main_list_item, null)
 
         this.items.elementAt(position).let {
-            with (newConvertView) {
+            with(newConvertView) {
                 titleTextView.text = it.title
                 imageView.setImageDrawable(context.getDrawable(it.imageResId))
             }
