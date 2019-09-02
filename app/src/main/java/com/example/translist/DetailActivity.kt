@@ -33,7 +33,6 @@ class DetailActivity : AppCompatActivity() {
         this.supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         this.item?.let {
-            println("_/_/ ${it.title}")
             this.titleTextView.text = it.title
             this.imageView.setImageDrawable(getDrawable(it.imageResId))
         }
@@ -44,7 +43,6 @@ class DetailActivity : AppCompatActivity() {
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        println("_/_/ $item")
         when (item.itemId) {
             android.R.id.home -> {
                 finishAfterTransition()
