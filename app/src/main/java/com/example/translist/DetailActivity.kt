@@ -1,7 +1,6 @@
 package com.example.translist
 
 import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.transition.*
@@ -9,7 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.animation.addListener
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.detail_activity.*
 import kotlin.math.abs
 
@@ -34,7 +33,7 @@ class DetailActivity : AppCompatActivity() {
 
         this.item?.let {
             this.titleTextView.text = it.title
-            this.imageView.setImageDrawable(getDrawable(it.imageResId))
+            Picasso.get().load(it.imageUrl).into(this.imageView)
         }
 
         findViewById<View>(android.R.id.content).systemUiVisibility =
